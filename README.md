@@ -1,73 +1,83 @@
-# EduManage – Learning Management System
+# EduManage LMS – Learning Management System
 
-A full-stack Learning Management System (LMS) built using the MERN stack. EduManage helps manage courses, students, instructors, enrollments, and assignments through a centralized dashboard.
+A full-stack Learning Management System (LMS) built using the MERN Stack (MongoDB, Express.js, React.js, and Node.js). EduManage helps administrators manage courses, students, instructors, assignments, enrollments, and academic activities through a modern and responsive dashboard.
 
-## Features
+## 🌐 Live Demo
 
-- User Authentication (Register & Login)
-- Role-based access: Admin, Instructor, and Student
-- Course Management (Create, Read, Update, Delete)
-- Student Management
-- Instructor Management
-- Course Enrollment
-- Assignment Management
-- Student Assignment Submissions
-- Dashboard and Analytics
-- Profile and Password Settings
-- Responsive User Interface
+**Live Website:** https://edu-manage-lms.vercel.app/login
 
-## Tech Stack
+**Backend API:** https://edumanage-backend-zlph.onrender.com
 
-**Frontend**
-- React.js
-- Vite
-- JavaScript
-- CSS
-- Axios
-- Recharts
-- Lucide React
+## 📸 Project Overview
 
-**Backend**
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- JWT Authentication
-- bcryptjs
+EduManage is designed to simplify educational management through a centralized platform with role-based authentication, course management, student tracking, and analytics.
 
-## Project Structure
+## ✨ Features
+
+- **Authentication:** User registration, login, JWT-based authentication, and protected routes.
+- **Dashboard:** Overview of courses, students, instructors, enrollments, and activities.
+- **Course Management:** Create, view, update, and delete courses.
+- **Student Management:** Manage student information and enrollments.
+- **Instructor Management:** Manage instructor records and related information.
+- **Assignment Management:** Create assignments and manage student submissions.
+- **Analytics:** View academic statistics and dashboard reports.
+- **Notifications:** Display important system notifications.
+- **Support:** Handle user support queries.
+- **Settings:** Manage account settings and change passwords.
+- **Responsive UI:** Designed for desktop, tablet, and mobile devices.
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React.js | Frontend development |
+| Vite | Frontend build tool |
+| Node.js | Backend runtime |
+| Express.js | REST API development |
+| MongoDB Atlas | Cloud database |
+| Mongoose | Database modeling |
+| JWT | Authentication |
+| bcryptjs | Password hashing |
+| Axios | API communication |
+| CSS | Styling and responsive design |
+| Git & GitHub | Version control |
+
+## 🏗️ Project Structure
 
 ```text
-Learning-Management-System/
+EduManage-LMS/
 │
 ├── Backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
 │   ├── routes/
-│   ├── scripts/
-│   ├── uploads/
-│   ├── server.js
-│   └── package.json
+│   ├── .env
+│   ├── package.json
+│   └── server.js
 │
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── assets/
 │   │   ├── components/
 │   │   ├── context/
-│   │   ├── layouts/
 │   │   ├── pages/
-│   │   └── services/
+│   │   ├── services/
+│   │   └── App.jsx
+│   ├── vercel.json
 │   └── package.json
 │
 └── README.md
 ```
 
-## Installation and Setup
+## ⚙️ Installation and Setup
 
-### 1. Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Kutubkhan0705/EduManage-LMS.git
-cd Learning-Management-System
+cd EduManage-LMS
 ```
 
 ### 2. Backend Setup
@@ -82,7 +92,11 @@ Create a `.env` file inside the Backend folder:
 ```env
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_secure_jwt_secret
+CLIENT_URL=http://localhost:5173
+ADMIN_NAME=EduManage Admin
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=your_admin_password
 ```
 
 Start the backend:
@@ -91,6 +105,10 @@ Start the backend:
 npm run dev
 ```
 
+Backend runs at:
+
+`http://localhost:5000`
+
 ### 3. Frontend Setup
 
 Open another terminal:
@@ -98,22 +116,58 @@ Open another terminal:
 ```bash
 cd frontend
 npm install
+```
+
+Create a `.env` file inside the frontend folder:
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+Start the frontend:
+
+```bash
 npm run dev
 ```
 
-Open the local frontend URL shown in the terminal.
+Frontend runs at:
 
-## Environment Variables
+`http://localhost:5173`
 
-Configure your MongoDB connection string and JWT secret in the backend `.env` file. Never upload actual secrets to GitHub.
+## 🔐 Security
 
-## Future Improvements
+- Passwords are hashed using bcryptjs.
+- JWT is used for authentication.
+- Protected routes restrict unauthorized access.
+- Environment variables store sensitive configuration.
+- MongoDB credentials and API secrets should never be committed to GitHub.
 
-- Online course video integration
-- Advanced reporting
-- Email notifications
-- More learning management features
+## 🚀 Deployment
 
-## Author
+| Component | Platform |
+|---|---|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
+| Repository | GitHub |
 
-Developed as a MERN Stack Full Stack Development Project.
+## 🔮 Future Improvements
+
+- Live video classes and lecture integration.
+- Course progress tracking.
+- Online quizzes and assessments.
+- Certificates after course completion.
+- Advanced reporting and analytics.
+- Email notifications.
+
+## 👨‍💻 Developer
+
+**Kutubuddin Khan**
+
+B.Tech – Information Technology
+
+**GitHub:** https://github.com/Kutubkhan0705
+
+## 📄 License
+
+This project is developed for educational and learning purposes.
