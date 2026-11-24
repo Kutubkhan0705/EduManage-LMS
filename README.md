@@ -66,7 +66,7 @@ Learning-Management-System/
 ### 1. Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Kutubkhan0705/EduManage-LMS.git
 cd Learning-Management-System
 ```
 
