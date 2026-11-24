@@ -1,4 +1,8 @@
 
+const dns = require("dns");
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -16,8 +20,6 @@ app.use(
 );
 
 app.use(express.json());
-
-connectDB();
 
 app.get("/", (req, res) => {
     res.json({
@@ -39,6 +41,17 @@ app.use("/api/support", require("./routes/supportRoutes"));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`EduManage Server running on port ${PORT}`);
-});
+const startServer = async () => {
+    try {
+        await connectDB();
+
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`EduManage Server running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error("Server startup failed:", error.message);
+        process.exit(1);
+    }
+};
+
+startServer();
